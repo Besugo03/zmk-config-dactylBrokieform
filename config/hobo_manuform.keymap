@@ -38,15 +38,17 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+                default_layer {
             bindings = <
+            // Main blocks (48 keys)
             &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
             &kp ESC    &kp Q     &kp W     &kp F     &kp P     &kp G       &kp J     &kp L     &kp U     &kp Y     &kp SEMI  &kp DEL
             &kp LSFT   &kp A     &kp R     &kp S     &kp T     &kp D       &kp H     &kp N     &kp E     &kp I     &kp O     &kp SQT
             &kp LCTRL  &kp Z     &kp X     &kp C     &kp V     &kp B       &kp K     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSFT
 
-            
-            &kp SPACE  <_sym_tab &trans  &kp LGUI  &kp LALT &trans       &trans    &kp BSPC  <_nav_enter &kp LEFT &kp RIGHT &kp DOWN
+            // Thumb clusters (12 keys)
+            // The order here matches the dtsi: inner key first for the left hand.
+            &kp SPACE  <_sym_tab &trans    &kp LGUI  &kp LALT &trans       &trans    &kp BSPC  <_nav_enter &kp LEFT &kp RIGHT &kp DOWN
             >;
         };
 

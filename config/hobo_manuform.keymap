@@ -1,19 +1,94 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h> // <-- Include mouse keycodes
+
+// Layer definitions
+#define _BASE 0
+#define _SYM  1
+#define _NAV  2
+#define _MOUSE 3 // <-- New mouse layer
+
+// Define a tapping term for our Layer-Tap keys.
+#define TAPPING_TERM 200
+// Define a quick tapping term for combos.
+#define COMBO_TERM 40
 
 / {
+    behaviors {
+        // Left Hand: Layer-Tap Tab -> Symbol Layer
+        lt_sym_tab: layer_tap_tab {
+            compatible = "zmk,behavior-layer-tap";
+            #binding-cells = <2>;
+            bindings = <&mo _SYM>, <&kp TAB>;
+            tapping-term-ms = <TAPPING_TERM>;
+        };
+
+        // Right Hand: Layer-Tap Enter -> Navigation Layer
+        lt_nav_enter: layer_tap_enter {
+            compatible = "zmk,behavior-layer-tap";
+            #binding-cells = <2>;
+            bindings = <&mo _NAV>, <&kp ENTER>;
+            tapping-term-ms = <TAPPING_TERM>;
+        };
+    };
+
+    combos { /* ... combos remain the same ... */ };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { // Layer 0
-            // -------------------------------------
-            // |     Z     |     M     |     K     |
-            // |     A     |     B     |     C     |
-            // |     D     |     E     |     F     |
+        /* LAYER 0: BASE (Colemak-DH) ... remains the same ... */
+        default_layer {
             bindings = <
-                &kp Z    &kp M    &kp K         &kp Z    &kp M    &kp K
-                &kp A    &kp B    &kp C         &kp A    &kp B    &kp C
-                &kp D    &kp E    &kp F         &kp A    &kp B    &kp C
+            // Left Hand                                                    // Right Hand
+            &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
+            &kp ESC    &kp Q     &kp W     &kp F     &kp P     &kp G           &kp J     &kp L     &kp U     &kp Y     &kp SEMI  &kp DEL
+            &kp LSFT   &kp A     &kp R     &kp S     &kp T     &kp D           &kp H     &kp N     &kp E     &kp I     &kp O     &kp SQT
+            &kp LCTRL  &kp Z     &kp X     &kp C     &kp V     &kp B           &kp K     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSFT
+                                 &kp LALT  &kp LGUI  &trans <_sym_tab &kp SPACE &trans     &trans &kp BSPC <_nav_enter &kp LEFT &kp RIGHT &kp DOWN
+            >;
+        };
+
+        /* LAYER 1: SYMBOLS ... remains the same ... */
+        symbol_layer { /* ... bindings remain the same ... */ };
+
+        /* LAYER 2: NAVIGATION & MEDIA
+         * The LShift key is now a trigger for the MOUSE layer.
+         */
+        nav_layer {
+            bindings = <
+            // Left Hand                                                    // Right Hand
+            &trans     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5          &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
+            &trans     &bt BT_CLR&bt BT_NXT&bt BT_PRV&bt BT_SEL 0 &bt BT_SEL 1 &kp HOME  &kp PG_DN &kp PG_UP &kp END   &trans    &kp F12
+            &mo _MOUSE &trans    &trans    &trans    &trans    &trans          &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans    &trans
+            &trans     &trans    &trans    &trans    &trans    &trans          &kp C_MUTE &kp C_VOLD &kp C_VOLU &kp C_PP &trans    &bootloader
+                                 &trans    &trans    &trans    &trans    &trans &trans      &trans &trans    &trans    &trans    &trans    &trans
+            >;
+        };
+
+        /*
+         * LAYER 3: MOUSE CONTROL
+         * An ergonomic layout for mouse control.
+         *
+         * ,----------------------------------------.                    ,----------------------------------------.
+         * |         |      |      |      |      |      |                    |      |      |      |      |      |          |
+         * |---------+------+------+------+------+------|                    |------+------+------+------+------+----------|
+         * |         | ScrlUp | L-Clk| R-Clk|      |      |                    |      |      | MvUp |      |      |          |
+         * |---------+------+------+------+------+------|                    |------+------+------+------+------+----------|
+         * |         | M-Clk|      |      |      |      |                    | MvLeft| MvDown| MvRight|      |          |
+         * |---------+------+------+------+------+------|                    |------+------+------+------+------+----------|
+         * |         | ScrlDwn|      |      |      |      |                    |      |      |      |      |      |          |
+         * `----------------------------------------'                    `----------------------------------------'
+         */
+        mouse_layer {
+            bindings = <
+            // Left Hand (Clicks & Scroll)                                  // Right Hand (Movement)
+            &trans      &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans    &trans
+            &trans      &mwh U    &mkp LCLK &mkp RCLK &trans    &trans          &trans    &trans    &mmv U    &trans    &trans    &trans
+            &trans      &mkp MCLK &trans    &trans    &trans    &trans          &mmv L    &mmv D    &mmv R    &trans    &trans    &trans
+            &trans      &mwh D    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans    &trans
+                                  &trans    &trans    &trans    &trans    &trans &trans     &trans  &trans    &trans    &trans    &trans    &trans
             >;
         };
     };

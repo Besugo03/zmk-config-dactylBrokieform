@@ -49,7 +49,7 @@
             // Thumb clusters (12 keys)
             // The order here matches the dtsi: inner key first for the left hand.
             
-            &kp SPACE  &trans &trans    &kp LGUI  &kp LALT &trans       &trans    &kp BSPC  &trans &kp LEFT &kp RIGHT &kp DOWN
+            &trans     &kp SPACE &lt _SYM TAB   &trans    &kp LGUI  &kp LALT &trans       &trans    &kp BSPC  &trans &kp LEFT &kp RIGHT &kp DOWN
             >;
             // TODO now the lt shit says it aint there.
         };

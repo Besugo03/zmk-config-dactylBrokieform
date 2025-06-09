@@ -84,7 +84,7 @@
             layers = <_BASE>;
         };
 
-    }
+    };
 
     // PER LA THUMB CLUSTER, CONTARE PER ENTRAMBE LE METÁ DA IN BASSO A SINISTRA, VERSO L'ALTO A DESTRA
     // FINO IN FONDO A DESTRA.

@@ -44,10 +44,23 @@
             #binding-cells = <0>;
             move-steps = <ZMK_POINTING_DEFAULT_MOVE_VAL>;
             scroll-steps = <ZMK_POINTING_DEFAULT_SCRL_VAL>;
+            
         };
     };
     // Define the combos
-    combos { /* ... Your combos here ... */ };
+    combos {
+        
+        compatible = "zmk,combos";
+        
+        combo_esc {
+            timeout-ms = <50>;
+            // triggers one time shift when pressing N and backspace
+            key-positions = <31, 55>;
+            bindings = <&sk LSHIFT>;
+            layers = <_BASE>;
+        };
+
+        };
 
     // PER LA THUMB CLUSTER, CONTARE PER ENTRAMBE LE METÁ DA IN BASSO A SINISTRA, VERSO L'ALTO A DESTRA
     // FINO IN FONDO A DESTRA.

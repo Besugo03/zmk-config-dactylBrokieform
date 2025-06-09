@@ -46,6 +46,15 @@
             scroll-steps = <ZMK_POINTING_DEFAULT_SCRL_VAL>;
             
         };
+
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Layer-Tap";
+        };
     };
     // Define the combos
     combos {
@@ -83,7 +92,6 @@
             bindings = <&sk LCTRL>;
             layers = <_BASE>;
         };
-
     };
 
     // PER LA THUMB CLUSTER, CONTARE PER ENTRAMBE LE METÁ DA IN BASSO A SINISTRA, VERSO L'ALTO A DESTRA

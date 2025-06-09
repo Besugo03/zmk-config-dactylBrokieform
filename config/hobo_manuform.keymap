@@ -51,15 +51,37 @@
     combos {
         
         compatible = "zmk,combos";
-        
-        combo_esc {
+
+        combo_win_o {
             timeout-ms = <50>;
             // triggers one time shift when pressing N and backspace
-            key-positions = <31 56>;
+            key-positions = <34 56>;
+            bindings = <&sk LGUI>;
+            layers = <_BASE>;
+        };
+
+        combo_alt_i {
+            timeout-ms = <50>;
+            // triggers one time shift when pressing N and backspace
+            key-positions = <33 56>;
+            bindings = <&sk LALT>;
+            layers = <_BASE>;
+        };
+        
+        combo_shift_e {
+            timeout-ms = <50>;
+            // triggers one time shift when pressing N and backspace
+            key-positions = <32 56>;
             bindings = <&sk LSHIFT>;
             layers = <_BASE>;
         };
 
+        combo_ctrl_n {
+            timeout-ms = <50>;
+            // triggers one time shift when pressing N and backspace
+            key-positions = <31 56>;
+            bindings = <&sk LCTRL>;
+            layers = <_BASE>;
         };
 
     // PER LA THUMB CLUSTER, CONTARE PER ENTRAMBE LE METÁ DA IN BASSO A SINISTRA, VERSO L'ALTO A DESTRA

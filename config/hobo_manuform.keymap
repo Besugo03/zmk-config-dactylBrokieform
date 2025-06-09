@@ -55,7 +55,7 @@
         combo_esc {
             timeout-ms = <50>;
             // triggers one time shift when pressing N and backspace
-            key-positions = <31, 55>;
+            key-positions = <31 55>;
             bindings = <&sk LSHIFT>;
             layers = <_BASE>;
         };

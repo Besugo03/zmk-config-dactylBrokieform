@@ -71,7 +71,7 @@
             &trans     &kp EXCL  &kp HASH  &kp LBRC  &kp RBRC  &trans      &kp AMPS  &kp LBKT  &kp RBKT  &kp PRCNT &kp CARET &kp BSLH
 
 
-            &trans     &trans    &trans    &trans    &trans    &trans      &trans    &trans    &trans    &trans     &trans    &trans
+            &trans     &trans    &trans    &trans    &trans    &trans      &trans    &trans    &kp LC(BSPC)    &trans     &trans    &trans
             >;
         };
 

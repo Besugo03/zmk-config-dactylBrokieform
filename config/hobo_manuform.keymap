@@ -198,4 +198,5 @@
             &trans   &trans   &lt _SYM TAB &kp SPACE &kp LGUI  &kp LALT    &trans    &kp LALT    &kp BSPC  &lt _NAV ENTER  &kp LEFT_ALT &tog 4
             >;
     };
+    };
 };

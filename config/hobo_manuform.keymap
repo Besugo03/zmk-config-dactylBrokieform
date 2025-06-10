@@ -145,7 +145,7 @@
             // Thumb clusters (12 keys)
             // The order here matches the dtsi: inner key first for the left hand.
             
-            &trans   &trans   &lt _SYM TAB &kp SPACE &lt _SYM TAB  &kp LALT    &trans    &kp LALT    &kp BSPC  &lt _NAV ENTER  &kp LEFT_ALT &kp RIGHT
+            &trans   &trans   &lt _SYM TAB &kp SPACE &kp LGUI  &kp LALT    &trans    &kp LALT    &kp BSPC  &lt _NAV ENTER  &kp LEFT_ALT &kp RIGHT
             >;
             // TODO now the lt shit says it aint there.
         };
@@ -180,7 +180,7 @@
             bindings = <
 
             &trans      &trans      &trans    &trans    &trans    &trans                    &trans          &trans    &trans    &trans    &trans    &trans
-            &trans      &trans      &kp LC(W) &kp LC(LG(LEFT)) &kp LC(LG(RIGHT))&trans             &kp C_VOL_UP    &kp LC(LS(TAB)) &kp LC(TAB)    &trans    &trans    &bt BT_CLR
+            &trans      &trans      &kp LC(W) &kp LC(LG(LEFT)) &kp LC(LG(RIGHT))&trans      &kp C_VOL_UP    &kp LC(LS(TAB)) &kp LC(TAB)    &trans    &trans    &bt BT_CLR
             &trans      &trans      &trans    &trans    &trans    &trans                    &kp C_VOL_DN    &trans    &trans    &trans    &trans    &trans
             &trans      &trans      &trans    &trans    &trans    &trans                    &kp K_PP        &trans    &trans    &trans    &trans    &trans
             

@@ -179,12 +179,12 @@
         mouse_layer {
             bindings = <
 
-            &trans      &trans      &trans    &trans    &trans    &trans                &trans          &trans    &trans    &trans    &trans    &trans
-            &trans      &trans      &kp LC(W) &kp LC(LS(TAB)) &kp LC(TAB)&trans            &kp C_VOL_UP    &kp LC(LS(TAB)) &kp LC(TAB)    &trans    &trans    &bt BT_CLR
-            &trans      &trans      &trans    &trans    &trans    &trans                &kp C_VOL_DN    &trans    &trans    &trans    &trans    &trans
-            &trans      &trans      &trans    &trans    &trans    &trans                &kp K_PP        &trans    &trans    &trans    &trans    &trans
+            &trans      &trans      &trans    &trans    &trans    &trans                    &trans          &trans    &trans    &trans    &trans    &trans
+            &trans      &trans      &kp LC(W) &kp LC(LG(LEFT)) &kp LC(LG(RIGHT))&trans             &kp C_VOL_UP    &kp LC(LS(TAB)) &kp LC(TAB)    &trans    &trans    &bt BT_CLR
+            &trans      &trans      &trans    &trans    &trans    &trans                    &kp C_VOL_DN    &trans    &trans    &trans    &trans    &trans
+            &trans      &trans      &trans    &trans    &trans    &trans                    &kp K_PP        &trans    &trans    &trans    &trans    &trans
             
-            &trans      &trans          &trans    &trans    &trans    &trans               &trans    &trans    &trans    &trans    &trans    &trans
+            &trans      &trans          &trans    &trans    &trans    &trans                &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
     };

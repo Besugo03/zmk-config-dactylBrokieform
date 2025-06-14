@@ -10,9 +10,11 @@
 
 // Layer definitions
 #define _BASE 0
-#define _SYM  1
-#define _NAV  2
-#define _EXTRA 3
+#define _GAMING 1
+#define _SYM  2
+#define _NAV  3
+#define _EXTRA 4
+#define _MOUSE 5
 
 // Define a tapping term for our Layer-Tap keys.
 #define TAPPING_TERM 200
@@ -138,17 +140,28 @@
             bindings = <
             // Main blocks (48 keys)
             &kp ESC  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp DEL
-            &kp TAB    &kp Q     &kp W     &kp F     &kp P     &kp G       &kp J     &kp L     &kp U     &kp Y     &kp SEMI  &kp SQT
+            &kp TAB    &kp Q     &kp W     &kp F     &kp P     &kp G       &kp J     &kp L     &kp U     &kp Y     &kp SEMI  &kp DEL
             &kp LSFT   &kp A     &kp R     &kp S     &kp T     &kp D       &kp H     &kp N     &kp E     &kp I     &kp O     &kp SQT
             &kp LCTRL  &kp Z     &kp X     &kp C     &kp V     &kp B       &kp K     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSFT
 
             // Thumb clusters (12 keys)
             // The order here matches the dtsi: inner key first for the left hand.
             
-            &trans   &trans   &lt _SYM TAB &kp SPACE &kp LGUI  &kp LALT    &trans    &kp LALT    &kp BSPC  &lt _NAV ENTER  &kp LEFT_ALT &tog 4
+            &trans   &trans   &lt _SYM TAB &kp SPACE &kp LGUI  &kp LALT    &trans    &kp LALT    &kp BSPC  &lt _NAV ENTER  &kp LEFT_ALT &tog _GAMING
             >;
             // TODO now the lt shit says it aint there.
         };
+    
+                gaming_layer {
+            bindings = <
+
+            &kp ESC  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp DEL
+            &kp TAB    &kp Q     &kp W     &kp E    &kp R     &kp T       &kp Y     &kp U     &kp I     &kp O     &kp P     &kp SQT
+            &kp LSFT   &kp A     &kp S     &kp D     &kp F     &kp G       &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+            &kp LCTRL  &kp Z     &kp X     &kp C     &kp V     &kp B       &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSFT
+            &trans   &trans   &lt _SYM TAB &kp SPACE &kp LGUI  &kp LALT    &trans    &kp LALT    &kp BSPC  &lt _NAV ENTER  &kp LEFT_ALT &tog _GAMING
+            >;
+    };
 
         symbol_layer {
             bindings = <
@@ -188,15 +201,6 @@
             >;
         };
 
-        gaming_layer {
-            bindings = <
 
-            &kp ESC  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp DEL
-            &kp TAB    &kp Q     &kp W     &kp E    &kp R     &kp T       &kp Y     &kp U     &kp I     &kp O     &kp P     &kp SQT
-            &kp LSFT   &kp A     &kp S     &kp D     &kp F     &kp G       &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-            &kp LCTRL  &kp Z     &kp X     &kp C     &kp V     &kp B       &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSFT
-            &trans   &trans   &lt _SYM TAB &kp SPACE &kp LGUI  &kp LALT    &trans    &kp LALT    &kp BSPC  &lt _NAV ENTER  &kp LEFT_ALT &tog 4
-            >;
-    };
     };
 };

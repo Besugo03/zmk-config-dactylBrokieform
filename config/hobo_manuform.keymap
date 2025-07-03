@@ -64,7 +64,7 @@
         compatible = "zmk,combos";
 
         combo_win_o {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             // triggers one time shift when pressing N and backspace
             key-positions = <34 56>;
             bindings = <&sk LGUI>;
@@ -72,7 +72,7 @@
         };
 
         combo_alt_i {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             // triggers one time shift when pressing N and backspace
             key-positions = <33 56>;
             bindings = <&sk LALT>;
@@ -80,7 +80,7 @@
         };
         
         combo_shift_e {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             // triggers one time shift when pressing N and backspace
             key-positions = <32 56>;
             bindings = <&sk LSHIFT>;
@@ -88,7 +88,7 @@
         };
 
         combo_ctrl_n {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             // triggers one time shift when pressing N and backspace
             key-positions = <31 56>;
             bindings = <&sk LCTRL>;
@@ -98,7 +98,7 @@
 
 
         combo_win_a {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             // triggers one time shift when pressing N and backspace
             key-positions = <25 51>;
             bindings = <&sk LGUI>;
@@ -106,7 +106,7 @@
         };
 
         combo_alt_r {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             // triggers one time shift when pressing N and backspace
             key-positions = <26 51>;
             bindings = <&sk LALT>;
@@ -114,7 +114,7 @@
         };
         
         combo_shift_s {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             // triggers one time shift when pressing N and backspace
             key-positions = <27 51>;
             bindings = <&sk LSHIFT>;
@@ -122,7 +122,7 @@
         };
 
         combo_ctrl_t {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             // triggers one time shift when pressing N and backspace
             key-positions = <28 51>;
             bindings = <&sk LCTRL>;
